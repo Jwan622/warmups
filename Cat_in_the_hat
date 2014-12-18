@@ -1,0 +1,4 @@
+File.open("cat_in_the_hat.rtf").each {|line| puts line}
+
+line_count = 0
+File.open("cat_in_the_hat.rtf").each {|line| line_count += 1}

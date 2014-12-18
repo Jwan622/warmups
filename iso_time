@@ -1,0 +1,22 @@
+require 'date'
+
+class Date
+  def self.iso_format(date)
+    if date.include? "#"
+      month, year, day = date.split("#")
+      assemble(year, month, day)
+    elsif date.include? "/"
+      month, day, year = date.split('/')
+      assemble(year, month, day)
+    elsif date.include? "*"
+      day, month, year = date.split("*")
+      assemble(year, month, day)
+    else
+      date
+    end
+  end
+
+  def self.assemble(year,month,day)
+    "#{year}-#{month}-#{day}"
+  end
+end
